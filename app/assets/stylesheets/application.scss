@@ -25,15 +25,15 @@ body {
   border: 1px solid rgba(23, 162, 48, 0.74);
   border-radius: 2px;
   font-weight: bold;
-  background-color: #ff5a5f;
+  background-color: rgba(23, 162, 48, 0.74);
   color: #fff;
   padding: 10px 25px 10px 25px;
 }
 
 .btn-primary.btn:hover, .btn-primary.btn:focus {
-  border-color: #ff7e82;
-  border-bottom-color: #fa0008;
-  background-color: #ff7e82;
+  border-color: #84daa3;
+  border-bottom-color: #6bb385;
+  background-color: #84daa3;
   outline:none;
 }
 
@@ -93,4 +93,41 @@ body {
 
 .avatar-full {
 	width: 100%;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-control {
+  border-radius: 2px;
+  height: 4rem;
+}
+
+.sidebar-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.sidebar-item {
+  padding: 10px 0;
+  font-size: 16px;
+  color: #82888a;
+  border-bottom: 1px solid #CCC;
+}
+
+.sidebar-link {
+  color: #82888a;
+  text-decoration: none;
+}
+
+.sidebar-link:hover, .sidebar-link:focus {
+  color: #cacccd;
+  text-decoration: none;
+}
+
+.active.sidebar-link {
+  color: #565a5c;
+  font-weight: bold;
+  text-decoration: none;
 }
