@@ -1,6 +1,7 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update]
   before_action :authenticate_user!, except: [:show]
+
   def index
     @properties = current_user.properties
   end
@@ -10,7 +11,7 @@ class PropertiesController < ApplicationController
   end
 
   def new
-    @property = current_user.property.build
+    @property = current_user.properties.build
   end
 
   def create
@@ -29,7 +30,7 @@ class PropertiesController < ApplicationController
 
   def update
     if @property.update(property_params)
-      redirect_to @room, notice: "Updated..."
+      redirect_to @property, notice: "Updated..."
     else
       render :edit
     end
