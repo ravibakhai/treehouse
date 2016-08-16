@@ -54,6 +54,13 @@
             </div>
           </div>
 
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Laundry</label>
+            <%= f.select :washer, [["In-Unit Laundry", "In-Unit Laundry"], ["Shared", "Shared"], ["None", "None"]], id: "washer", prompt: "Select...", class: "form-control" %>
+            </div>
+          </div>
+
           <div class="col-md-4">
             <div class="form-group">
               <label>Square Feet</label>
