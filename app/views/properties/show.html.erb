@@ -1,2 +1,144 @@
-<h1>Properties#show</h1>
-<p>Find me in app/views/properties/show.html.erb</p>
+<div class="panel panel-default">
+	<div class="panel-body">
+
+		<!-- Image -->
+		<div class="row">
+			<div class="col-md-12">
+				<%= image_tag @photos[0].image.url(), class: "img-responsive" if @photos.length > 0 %>
+			</div>
+		</div>
+
+		<br>
+
+		<!-- Main Info -->
+		<div class="row">
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<%= image_tag avatar_url(@property.user), class: "img-circle avatar-large" %><br><br>
+						<%= @property.user.fullname %>
+					</div>
+
+					<div class="col-md-9">
+						<h4><%= @property.listing_name %></h4>
+						<%= @property.address %>
+
+						<div class="row text-center row-space-1">
+							<div class="col-sm-3">
+								<i class="fa fa-home fa-2x"></i>
+							</div>
+							<div class="col-sm-3">
+								<i class="fa fa-users fa-2x"></i>
+							</div>
+							<div class="col-sm-3">
+								<i class="fa fa-bed fa-2x"></i>
+							</div>
+							<div class="col-sm-3">
+								<i class="fa fa-ship fa-2x"></i>
+							</div>
+						</div>
+
+						<div class="row text-center">
+							<div class="col-sm-3">
+								<%= @property.property_type %>
+							</div>
+							<div class="col-sm-3">
+								<%= pluralize(@property.accommodate, 'Guest') %>
+							</div>
+							<div class="col-sm-3">
+								<%= @property.bedroom %> <%= @property.bedroom > 1? "Bedrooms" : "Bedroom" %>
+							</div>
+							<div class="col-sm-3">
+								<%= @property.bathroom %> <%= @property.bathroom > 1? "Bathrooms" : "Bathroom" %>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<!-- Reservation form -->
+			</div>
+		</div>
+
+		<!-- About -->
+		<div class="row">
+			<div class="col-md-12">
+				<h2>About This Listing</h2>
+				<p><%= @property.summary %></p>
+			</div>
+		</div>
+
+		<!-- Amenities -->
+		<div class="row">
+			<div class="col-md-2">
+				<p>Amentities</p>
+			</div>
+			<div class="col-md-10">
+				<div class="row">
+					<div class="col-md-6">
+						<ul class="amenities">
+							<li class="<%= 'text-line-through' if !@property.is_furnished %>">Furnished</li>
+							<li class="<%= 'text-line-through' if !@property.is_kitchen %>">Kitchen</li>
+							<li class="<%= 'text-line-through' if !@property.is_internet %>">Internet</li>
+              <li class="<%= 'text-line-through' if !@property.is_heating %>">Heating</li>
+  						<li class="<%= 'text-line-through' if !@property.is_ac %>">Air Conditioning</li>
+              <li class="<%= 'text-line-through' if !@property.is_tv %>">TV</li>
+              <li class="<%= 'text-line-through' if !@property.is_gym %>">Gym</li>
+							<li class="<%= 'text-line-through' if !@property.washer %>"><%= @property.washer %></li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<li class="<%= 'text-line-through' if !@property.is_workspace %>">Workspace</li>
+						<li class="<%= 'text-line-through' if !@property.is_dishwasher %>">Dishwasher</li>
+            <li class="<%= 'text-line-through' if !@property.is_pet_allowed %>">Pets Allowed</li>
+						<li class="<%= 'text-line-through' if !@property.is_parking %>">Parking</li>
+            <li class="<%= 'text-line-through' if !@property.is_doorman %>">Doorman</li>
+            <li class="<%= 'text-line-through' if !@property.is_roof_access %>">Roof Access</li>
+						<li class="<%= 'text-line-through' if !@property.is_pool %>">Pool</li>
+						<li class="<%= 'text-line-through' if !@property.square_foot %>"><%= @property.square_foot %> Square Ft.</li>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Carousel -->
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+					<% if @photos %>
+						<!-- Indicators -->
+				    <ol class="carousel-indicators">
+							<% @photos.each do |photo| %>
+								<li data-target="#myCarousel" data-slide-to="<%= photo.id %>"></li>
+							<% end %>
+						</ol>
+					<% end %>
+
+				  <div class="carousel-inner" role="listbox">
+				    <% if @photos %>
+							<% @photos.each do |photo| %>
+								<div class="item <%= 'active' if photo.id == @photos[0].id %>">
+				          <%= image_tag photo.image.url() %>
+				        </div>
+							<% end %>
+						<% end %>
+				  </div>
+
+				  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				  </a>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+</div>
