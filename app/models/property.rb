@@ -1,5 +1,6 @@
 class Property < ActiveRecord::Base
   belongs_to :user
+  has_many :photos
 
   validates :property_type, presence: true
   validates :room, presence: true
