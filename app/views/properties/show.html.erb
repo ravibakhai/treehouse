@@ -90,6 +90,7 @@
 						</ul>
 					</div>
 					<div class="col-md-6">
+						<ul class="amenities">
 						<li class="<%= 'text-line-through' if !@property.is_workspace %>">Workspace</li>
 						<li class="<%= 'text-line-through' if !@property.is_dishwasher %>">Dishwasher</li>
             <li class="<%= 'text-line-through' if !@property.is_pet_allowed %>">Pets Allowed</li>
@@ -98,6 +99,7 @@
             <li class="<%= 'text-line-through' if !@property.is_roof_access %>">Roof Access</li>
 						<li class="<%= 'text-line-through' if !@property.is_pool %>">Pool</li>
 						<li class="<%= 'text-line-through' if !@property.square_foot %>"><%= @property.square_foot %> Square Ft.</li>
+					</ul>
 					</div>
 				</div>
 			</div>
