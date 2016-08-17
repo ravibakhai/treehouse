@@ -28,6 +28,7 @@ class PropertiesController < ApplicationController
       @photos = @property.photos
       redirect_to edit_property_path(@property), notice: "Saved..."
     else
+      flash[:alert] = "Please provide all required information for this property."
       render :new
     end
   end
@@ -51,6 +52,7 @@ class PropertiesController < ApplicationController
 
       redirect_to edit_property_path(@property), notice: "Updated..."
     else
+      flash[:alert] = "Please provide all required information for this property."
       render :edit
     end
   end
