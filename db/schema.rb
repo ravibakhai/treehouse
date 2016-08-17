@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160816153020) do
+ActiveRecord::Schema.define(version: 20160817012401) do
 
   create_table "photos", force: :cascade do |t|
     t.integer  "property_id"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 20160816153020) do
     t.datetime "updated_at",     null: false
     t.string   "laundry"
     t.string   "washer"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "properties", ["user_id"], name: "index_properties_on_user_id"

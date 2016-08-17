@@ -2,6 +2,9 @@ class Property < ActiveRecord::Base
   belongs_to :user
   has_many :photos
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   validates :property_type, presence: true
   validates :room, presence: true
   validates :accommodate, presence: true
