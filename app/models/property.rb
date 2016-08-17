@@ -13,6 +13,5 @@ class Property < ActiveRecord::Base
   validates :listing_name, presence: true, length: {maximum: 50}
   validates :summary, presence: true, length: {maximum: 500}
   validates :address, presence: true
-  validates :photos, presence: true
 
 end
