@@ -7,7 +7,7 @@
 				<% if @property.photos.count > 0 %>
 				<%= image_tag @photos[0].image.url(), class: "img-responsive" if @photos.length > 0 %>
 				<% else %>
-				<%= image_tag "http://www.medillnews847.com/madeinchicago/midwife/img/home.png" %>
+				<%= image_tag "defaultimage.png"%>
 				<% end %>
 			</div>
 		</div>
@@ -190,7 +190,7 @@
 								<% if property.photos.count > 0 %>
 								<%= image_tag property.photos[0].image.url(:medium) %>
 								<% else %>
-								<%= image_tag "http://www.medillnews847.com/madeinchicago/midwife/img/home.png" %>
+								<%= image_tag "defaultimage.png"%>
 								<% end %>
 							</div>
 							<div class="panel-body">
