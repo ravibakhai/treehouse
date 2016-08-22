@@ -15,7 +15,11 @@
 				<% @properties.each do |property| %>
 					<div class="row">
 						<div class="col-md-2">
+							<% if property.photos.count > 0 %>
 							<%= image_tag property.photos[0].image.url(:thumb) if property.photos.length > 0 %>
+							<% else %>
+							<%= image_tag "http://www.medillnews847.com/madeinchicago/midwife/img/home.png" %>
+							<% end %>
 						</div>
 						<div class="col-md-7">
 							<h4><%= property.listing_name %></h4>
