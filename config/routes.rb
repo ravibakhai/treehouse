@@ -12,5 +12,10 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :properties
   resources :photos
-  
+
+  resources :properties do
+    resources :reservations, only: [:create]
+  end
+
+
 end
