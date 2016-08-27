@@ -123,7 +123,7 @@
 
 						var start_date = $('#reservation_start_date').datepicker('getDate');
 						var end_date = $(this).datepicker('getDate');
-						var days = (end_date - start_date)/1000/60/60/24/7
+						var days = [(end_date - start_date)/1000/60/60/24 + 1]/28
 
 						var input = {
 							'start_date': start_date,
