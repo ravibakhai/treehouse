@@ -18,5 +18,23 @@
     <div class="description row-space-3">
       <%= @user.description %>
     </div>
+
+    <h4> Listings (<%= @properties.length%>) </h4><br>
+
+    <div class = "row">
+
+      <% @properties.each do |property| %>
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading preview">
+              <%= image_tag property.photos[0].image.url(:medium) %>
+            </div>
+            <div class="panel-body">
+              <%= link_to property.listing_name, property_path(property)%>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

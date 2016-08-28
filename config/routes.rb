@@ -22,5 +22,5 @@ Rails.application.routes.draw do
 
   get '/your_places' => 'reservations#your_places'
   get '/your_reservations' => 'reservations#your_reservations'
-  
+
 end
