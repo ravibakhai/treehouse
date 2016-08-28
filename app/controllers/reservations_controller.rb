@@ -26,6 +26,14 @@ class ReservationsController < ApplicationController
 		redirect_to @reservation.property, notice: "Your reservation has been created..."
 	end
 
+  def your_places
+    @places = current_user.reservations
+  end
+
+  def your_reservations
+    @properties = current_user.properties
+  end
+
 	private
 		def is_conflict(start_date, end_date)
 			property = Property.find(params[:property_id])
