@@ -20,7 +20,7 @@
             </div>
             <div class="col-md-6">
               <%= link_to property_path(place.property) do %>
-                <%= image_tag place.property.photos[0].image.url(:thumb) if place.property.photos.length > 0 %>
+                <%= image_tag place.property.show_first_photo(:thumb) %>
               <% end %>
             </div>
             <div class="col-md-2">

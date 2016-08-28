@@ -21,7 +21,7 @@
               </div>
               <div class="col-md-6">
                 <%= link_to property_path(reservation.property) do %>
-                  <%= image_tag reservation.property.photos[0].image.url(:thumb) if reservation.property.photos.length > 0 %>
+                  <%= image_tag property.show_first_photo(:thumb) %>
                 <% end %>
               </div>
               <div class="col-md-2">
