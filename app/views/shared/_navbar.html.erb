@@ -32,11 +32,15 @@
           <li> <%= link_to 'Log in', new_user_session_path %> </li>
         <% end %>
       <li>
-        <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> Messages </a>
+        <%= link_to conversations_path do %>
+        <i class="fa fa-envelope-o" aria-hidden="true"></i> Messages
+        <% end %>
       </li>
 
       <li>
-        <a href="#"><i class="fa fa-home fa-lg" aria-hidden="true"></i> Become a Host </a>
+        <%= link_to new_property_path do %>
+        <i class="fa fa-home fa-lg" aria-hidden="true"></i> Become a Host
+        <% end %>
       </li>
 
     </ul>
