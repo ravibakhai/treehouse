@@ -9,10 +9,10 @@ class PropertiesController < ApplicationController
   def show
     @photos = @property.photos
 
-    @booked = Reservation.where("property_id" = ? AND user_id = ?", @property.id, current_user.id).present if current_user
+    @booked = Reservation.where("property_id = ? AND user_id = ?", @property.id, current_user.id).present? if current_user
 
-    @reviews = @property.reviews 
-    @hasReview = @reviews.find_by(user_id: current_user.id) if current user
+    @reviews = @property.reviews
+    @hasReview = @reviews.find_by(user_id: current_user.id) if current_user
   end
 
   def new

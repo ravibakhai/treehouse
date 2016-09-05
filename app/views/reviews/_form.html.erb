@@ -1,0 +1,12 @@
+<%= form_for([@property, @property.reviews.new]) do |f| %>
+
+	<%= f.text_field :star %>
+	<%= f.text_field :comment %>
+
+	<%= f.hidden_field :property_id, value: @property.id %>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+
+<% end %>
