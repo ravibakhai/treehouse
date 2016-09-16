@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160905204402) do
+ActiveRecord::Schema.define(version: 20160916030131) do
 
   create_table "conversations", force: :cascade do |t|
     t.integer  "sender_id"
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 20160905204402) do
     t.integer  "total"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.boolean  "status"
   end
 
   add_index "reservations", ["property_id"], name: "index_reservations_on_property_id"
