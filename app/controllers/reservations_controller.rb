@@ -23,8 +23,25 @@ class ReservationsController < ApplicationController
 	def create
 		@reservation = current_user.reservations.create(reservation_params)
 
-		redirect_to @reservation.property, notice: "Your reservation has been created..."
-	end
+    if @reservation
+
+      values = {
+        business: '',
+        cmd: '_xclick'
+        upload: 1,
+        notify_url: '',
+        amount: @reservation.total,
+        item_name: @reservation.property.listing_name,
+        item_number: @reservation.id,
+        quantity: '1'
+        return: ''
+      }
+
+        redirect_to ""
+    else
+		    redirect_to @reservation.property, alert: "Ooops, something went wrong..."
+    end
+  end
 
   def your_places
     @places = current_user.reservations
