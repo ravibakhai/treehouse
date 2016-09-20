@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:notify]
 
   def preload
 		property = Property.find(params[:property_id])
@@ -26,25 +26,42 @@ class ReservationsController < ApplicationController
     if @reservation
 
       values = {
-        business: '',
-        cmd: '_xclick'
+        business: 'ravi.bakhai-facilitator-1@gmail.com',
+        cmd: '_xclick',
         upload: 1,
-        notify_url: '',
+        notify_url: 'http://d65c9cb3.ngrok.io/notify',
         amount: @reservation.total,
         item_name: @reservation.property.listing_name,
         item_number: @reservation.id,
-        quantity: '1'
-        return: ''
+        quantity: '1',
+        return: 'http://d65c9cb3.ngrok.io/your_places'
       }
 
-        redirect_to ""
+        redirect_to "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
     else
 		    redirect_to @reservation.property, alert: "Ooops, something went wrong..."
     end
   end
 
+  protect_from_forgery except: [:notify]
+  def notify
+    params.permit!
+    status = params[:payment_status]
+
+    reservation = Reservation.find(params[:item_number])
+
+    if status = "Completed"
+      reservation.update_attributes status: true
+    else
+      reservation.destroy
+    end
+
+    render nothing: true
+  end
+
+protect_from_forgery except: [:your_places]
   def your_places
-    @places = current_user.reservations
+    @places = current_user.reservations.where("status = ?", true)
   end
 
   def your_reservations

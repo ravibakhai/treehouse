@@ -15,6 +15,7 @@
         <% @properties.each do |property| %>
 
           <% property.reservations.each do |reservation| %>
+						<% if reservation.status %>
             <div class="row">
               <div class="col-md-2">
                 <%= reservation.start_date.strftime('%v') %>
@@ -35,6 +36,7 @@
             </div>
             <hr>
             <% end %>
+					<% end %>
 
 				<% end %>
 

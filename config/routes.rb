@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       resources :messages, only: [:index, :create]
     end
 
-  resources :properties do 
+  resources :properties do
     resources :reviews, only: [:create, :destroy]
   end
 
@@ -31,4 +31,7 @@ Rails.application.routes.draw do
   get '/your_places' => 'reservations#your_places'
   get '/your_reservations' => 'reservations#your_reservations'
 
+  post '/notify' => 'reservations#notify'
+  post '/your_places' => 'reservations#your_places'
+  
 end
