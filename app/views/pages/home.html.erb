@@ -12,6 +12,7 @@
     <div class= "col-md-6">
       <%= submit_tag "Search", class: "btn btn-primary" %>
     </div>
+    <% end %>
   </div>
 <div class = "row">
 
@@ -41,13 +42,13 @@
       }
     });
 
-    $("start_date").datepicker({
+    $("end_date").datepicker({
       dateFormat: 'dd-mm-yy'
       minDate: 0,
       maxDate: '12m',
       onSelect: function(selected) {
-        $('#end_date').datepicker("option", "minDate", selected);
-        $('#end_date').attr('disabled', false);
+        $('#start_date').datepicker("option", "minDate", selected);
+        $('#start_date').attr('disabled', false);
       }
     });
   })

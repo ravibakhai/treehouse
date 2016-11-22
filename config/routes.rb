@@ -33,5 +33,6 @@ Rails.application.routes.draw do
 
   post '/notify' => 'reservations#notify'
   post '/your_places' => 'reservations#your_places'
-  
+
+  get '/search' => 'pages#search'
 end
