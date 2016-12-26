@@ -2,13 +2,41 @@
 
 	<div id="sidebar">
 		<div id="widget" class="sticky">
+			<script>
+					function initMap() {
+						var mapDiv = document.getElementById('widget');
+						var map = new google.maps.Map(mapDiv, {
+								<% if @arrProperties.length > 0 %>
+								center: {lat: <%=@arrProperties[0].latitude%>, lng: <%=@arrProperties[0].longitude%>},
+								<% else %>
+								center: {lat: 44.5403, lng: -78.5463},
+								<% end %>
 
+								zoom: 14
+						});
+
+						<% @arrProperties.each do |property| %>
+							var marker = new google.maps.Marker({
+								position: new google.maps.LatLng(<%= property.latitude %>, <%= property.longitude %>),
+								title: "Treehouse"
+							});
+
+							marker.setMap(map);
+						<% end %>
+					}
+			</script>
+			<script async defer
+						src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqYq1yXZcYlqT5VyLh2UR-BZkseMlMHXI&callback=initMap">
+			</script>
 		</div>
 	</div>
 
 	<div id="article">
 
 		<div class="row">
+
+			<div class="col-md-12">
+
 			<%= search_form_for @search, url: search_path do |f| %>
 
 				<div class="row">
@@ -26,6 +54,8 @@
 					</div>
 				</div>
 
+				<hr>
+
 				<div class="row">
 					<div class="col-md-4">
 						<%= check_box_tag "q[property_type_eq_any][]", "Apartment" %> Apartment
@@ -40,6 +70,8 @@
             <%= check_box_tag "q[property_type_eq_any][]", "Town House" %> Town House
           </div>
 				</div>
+
+				<hr>
 
 				<div class="row">
 					<div class="col-md-4">
@@ -70,6 +102,8 @@
 						</div>
 					</div>
 				</div>
+
+				<hr>
 
 				<div class="row">
 					<div class="col-md-4">
@@ -116,11 +150,33 @@
 					</div>
 				</div>
 
+				<br>
+
 				<div class="row">
 					<%= f.submit "Search", class: "btn btn-primary" %>
 				</div>
 
 			<% end %>
+
+			<hr>
+
+			<div class = "row">
+
+			  <% @arrProperties.each do |property| %>
+			    <div class="col-md-6">
+			      <div class="panel panel-default">
+			        <div class="panel-heading preview">
+			          <%= image_tag property.show_first_photo(:medium) %>
+			        </div>
+			        <div class="panel-body">
+			          <%= link_to property.listing_name, property_path(property)%>
+			        </div>
+			      </div>
+			    </div>
+			  <% end %>
+			</div>
+
+		</div>
 		</div>
 
 	</div>
@@ -148,4 +204,28 @@
 			}
 		});
 	})
+</script>
+
+<script>
+
+	$(function(){
+
+	if (!!$('sticky').offset()) {
+
+		var stickyTop = $('.stick').offset().top;
+
+		$(window).scroll(function(){
+
+			var windowTop = $(window).scrollTop();
+
+			if (stickyTop < windowTop) {
+				$('.sticky').css({position: 'fixed', top: 0});
+			}
+			else {
+				$('.sticky').css('position', 'static');
+			}
+		});
+	}
+});
+
 </script>
