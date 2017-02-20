@@ -79,14 +79,5 @@ Rails.application.configure do
 
   config.serve_static_files = true
   config.assets.compile = true
-
-#   config.paperclip_defaults = {
-#   storage: :s3,
-#   s3_credentials: {
-#     bucket: ENV.fetch('treehousebeta'),
-#     access_key_id: ENV.fetch('AKIAJ3YFE5HHQ6S5ENZA'),
-#     secret_access_key: ENV.fetch('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'),
-#     s3_region: ENV.fetch('Oregon'),
-#   }
-# }
+  
 end
