@@ -48,6 +48,7 @@ gem 'omniauth-facebook'
 gem 'devise'
 
 gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
 
 gem 'geocoder'
 
