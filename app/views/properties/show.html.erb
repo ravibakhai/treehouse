@@ -20,7 +20,8 @@
 				<div class="row">
 					<div class="col-md-3 text-center">
 						<%= image_tag avatar_url(@property.user), class: "img-circle avatar-large" %><br><br>
-						<%= @property.user.fullname %>
+						<%= link_to @property.user.fullname, user_path(@property.user_id) %> <br> <%= "(click to message)"%>
+
 					</div>
 
 					<div class="col-md-9">
