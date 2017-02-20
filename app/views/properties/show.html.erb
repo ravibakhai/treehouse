@@ -62,11 +62,11 @@
 			</div>
 
 			<div class="col-md-4">
-				<!-- Reservation form -->
 				<% if current_user == @property.user %>
 					<%= "" %>
 				<% else %>
-				<%= render 'reservations/form' %>
+				<!-- <%= render 'reservations/form' %> -->
+				<%= "" %>
 				<% end %>
 			</div>
 		</div>
