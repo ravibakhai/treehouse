@@ -14,7 +14,7 @@
 
       <%= form_tag search_path, class: "navbar-form navbar-left", method: :get do %>
         <div class="form-group">
-          <%= text_field_tag :search, params[:search], placeholder: "Where are you going?", class: "form-control" %>
+          <%= text_field_tag :search, params[:search], placeholder: "University, city, address", class: "form-control" %>
         </div>
       <% end %>
       <ul class="nav navbar-nav navbar-right">
@@ -26,8 +26,8 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Your Listings", properties_path %> </li>
-              <li><%= link_to "Your Reservations", your_reservations_path %></li>
-              <li> <%= link_to "Your Places", your_places_path %> </li>
+              <!-- <li><%= link_to "Your Reservations", your_reservations_path %></li>
+              <li> <%= link_to "Your Places", your_places_path %> </li> -->
               <li role="separator" class="divider"></li>
               <li><%= link_to "Your Profile", user_path(current_user) %></li>
               <li> <%= link_to 'Log out', destroy_user_session_path, method: :delete %> </li>
@@ -45,7 +45,7 @@
 
       <li>
         <%= link_to new_property_path do %>
-        <i class="fa fa-home fa-lg" aria-hidden="true"></i> Become a Host
+        <i class="fa fa-home fa-lg" aria-hidden="true"></i> Post a Listing
         <% end %>
       </li>
 
