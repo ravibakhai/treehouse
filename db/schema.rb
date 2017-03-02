@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160916030131) do
+ActiveRecord::Schema.define(version: 20170302030943) do
 
   create_table "conversations", force: :cascade do |t|
     t.integer  "sender_id"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20160916030131) do
     t.string   "washer"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "quarter"
   end
 
   add_index "properties", ["user_id"], name: "index_properties_on_user_id"
