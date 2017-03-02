@@ -95,7 +95,7 @@ Rails.application.configure do
     :password => 'jq4smrue',
     :domain => 'treehousebeta.herokuapp.com',
     :address => 'smtp.sendgrid.net',
-    :port => '25',
+    :port => 587,
     :authentication => :plain,
     :enable_starttls_auto => true
   }
