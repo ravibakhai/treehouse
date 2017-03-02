@@ -89,14 +89,15 @@ Rails.application.configure do
       s3_region: ENV.fetch('AWS_REGION'),
     }
   }
-  ActionMailer::Base.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => 'treehousebeta.herokuapp.com'}
   ActionMailer::Base.smtp_settings = {
     :user_name => 'ravi0613',
     :password => 'jq4smrue',
     :domain => 'treehousebeta.herokuapp.com',
     :address => 'smtp.sendgrid.net',
-    :port => 587,
+    :port => '25',
     :authentication => :plain,
     :enable_starttls_auto => true
+    :address => 'smtp.sendgrid.net'
   }
 end
