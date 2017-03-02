@@ -8,19 +8,27 @@
       <%= form_for @property, html: {multipart: true} do |f| %>
 
       <div class="row">
+
           <div class="col-md-4 select">
             <div class="form-group">
-              <label>Property Type*</label>
-            <%= f.select :property_type, [["Apartment", "Apartment"], ["House", "House"], ["Frat House", "Frat House"],
-            ["Town House", "Town House"]], id: "property_type", prompt: "Select...", class: "form-control" %>
+              <label>Quarter (if applicable)</label>
+            <%= f.select :quarter, [["Fall", "Fall"], ["Winter", "Winter"], ["Spring", "Spring"],
+            ["Summer", "Summer"]], id: "quarter", prompt: "Select...", class: "form-control" %>
             </div>
           </div>
 
           <div class="col-md-4 select">
             <div class="form-group">
-              <label>Quarter</label>
-            <%= f.select :quarter, [["Fall", "Fall"], ["Winter", "Winter"], ["Spring", "Spring"],
-            ["Summer", "Summer"]], id: "quarter", prompt: "Select...", class: "form-control" %>
+              <label>Semester (if applicable)</label>
+            <%= f.select :quarter, [["Fall", "Fall"], ["Spring", "Spring"]], id: "semester", prompt: "Select...", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Property Type*</label>
+            <%= f.select :property_type, [["Apartment", "Apartment"], ["House", "House"], ["Frat House", "Frat House"],
+            ["Town House", "Town House"]], id: "property_type", prompt: "Select...", class: "form-control" %>
             </div>
           </div>
 
@@ -147,7 +155,7 @@
           <div class="row">
             <div class="col-md-4">
               <div class="form-group">
-                <label>Monthly Price</label>
+                <label>Monthly Price*</label>
                 <div class="input-group">
                 <div class="input-group-addon">$</div>
                 <%= f.text_field :price, placeholder: "eg. 100", class: "form-control" %>
