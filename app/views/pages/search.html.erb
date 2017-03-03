@@ -53,9 +53,45 @@
 						<%= f.text_field :price_lteq, placeholder: "Max Price", class: "form-control" %>
 					</div>
 				</div>
+				<hr>
+				<div class="row">
+					<div class = "col-md-1">
+						Select Quarter(s)
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-3">
+						<%= check_box_tag "q[quarter_eq_any][]", "Fall" %> Fall
+					</div>
+					<div class="col-md-3">
+						<%= check_box_tag "q[quarter_type_eq_any][]", "Winter" %> Winter
+					</div>
+					<div class="col-md-3">
+						<%= check_box_tag "q[quarter_eq_any][]", "Spring" %> Spring
+					</div>
+					<div class="col-md-3">
+						<%= check_box_tag "q[quarter_type_eq_any][]", "Summer" %> Summer
+					</div>
+				</div>
+				<hr>
+				<hr>
+				<div class="row">
+					<div class = "col-md-1">
+						Select Semester(s)
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-3">
+						<%= check_box_tag "q[semester_eq_any][]", "Fall" %> Fall
+					</div>
+					<div class="col-md-3">
+						<%= check_box_tag "q[semester_type_eq_any][]", "Spring" %> Spring
+					</div>
+				</div>
 
 				<hr>
-
 				<div class="row">
 					<div class="col-md-4">
 						<%= check_box_tag "q[property_type_eq_any][]", "Apartment" %> Apartment
