@@ -23,51 +23,59 @@ class ReservationsController < ApplicationController
 	def create
 		@reservation = current_user.reservations.create(reservation_params)
 
-    if @reservation
-
-      values = {
-        business: 'ravi.bakhai-facilitator-1@gmail.com',
-        cmd: '_xclick',
-        upload: 1,
-        notify_url: 'http://d65c9cb3.ngrok.io/notify',
-        amount: @reservation.total,
-        item_name: @reservation.property.listing_name,
-        item_number: @reservation.id,
-        quantity: '1',
-        return: 'http://d65c9cb3.ngrok.io/your_places'
-      }
-
-        redirect_to "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
-    else
-		    redirect_to @reservation.property, alert: "Ooops, something went wrong..."
-    end
+    redirect_to @reservation.property, notice: "Your request has been made..."
+    # if @reservation
+    #
+    #   values = {
+    #     business: 'ravi.bakhai-facilitator-1@gmail.com',
+    #     cmd: '_xclick',
+    #     upload: 1,
+    #     notify_url: 'http://d65c9cb3.ngrok.io/notify',
+    #     amount: @reservation.total,
+    #     item_name: @reservation.property.listing_name,
+    #     item_number: @reservation.id,
+    #     quantity: '1',
+    #     return: 'http://d65c9cb3.ngrok.io/your_places'
+    #   }
+    #
+    #     redirect_to "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
+    # else
+		#     redirect_to @reservation.property, alert: "Ooops, something went wrong..."
+    # end
   end
 
-  protect_from_forgery except: [:notify]
-  def notify
-    params.permit!
-    status = params[:payment_status]
-
-    reservation = Reservation.find(params[:item_number])
-
-    if status = "Completed"
-      reservation.update_attributes status: true
-    else
-      reservation.destroy
-    end
-
-    render nothing: true
-  end
-
-protect_from_forgery except: [:your_places]
   def your_places
-    @places = current_user.reservations.where("status = ?", true)
+    @places = current_user.reservations
   end
 
   def your_reservations
     @properties = current_user.properties
   end
-
+#   protect_from_forgery except: [:notify]
+#   def notify
+#     params.permit!
+#     status = params[:payment_status]
+#
+#     reservation = Reservation.find(params[:item_number])
+#
+#     if status = "Completed"
+#       reservation.update_attributes status: true
+#     else
+#       reservation.destroy
+#     end
+#
+#     render nothing: true
+#   end
+#
+# protect_from_forgery except: [:your_places]
+#   def your_places
+#     @places = current_user.reservations.where("status = ?", true)
+#   end
+#
+#   def your_reservations
+#     @properties = current_user.properties
+#   end
+#
 	private
 		def is_conflict(start_date, end_date)
 			property = Property.find(params[:property_id])
