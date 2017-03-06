@@ -19,7 +19,7 @@
 							<%= image_tag property.show_first_photo(:thumb) %>
 						</div>
 						<div class="col-md-7">
-							<h4><%= property.listing_name %></h4>
+							<h4><%= link_to property.listing_name, property_path(property)%></h4>
 						</div>
 						<div class="col-md-3 right">
 							<%= link_to "Update", edit_property_path(property), class: "btn btn-primary" %>
