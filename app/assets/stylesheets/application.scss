@@ -4,13 +4,53 @@
 
 body {
   color: #565a5c;
-  background-color: #F8F8F8;
+  // background-color: #F8F8F8;
+  background-color: white;
+  font-family: gotham;
 }
 
+.searchome {
+  padding-top: 1.5em;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.backgroundimage {
+  background-size:cover;
+  background-position: center;
+  height: 750px;
+  width: 100%;
+}
 .container {
-	width: 80%;
+	width: 100%;
 }
 
+.treehouse {
+  text-align: center;
+  font-size: 80px;
+  color: white;
+  padding-top: 3em;
+}
+
+.thedescription {
+  text-align: center;
+  font-size: 30px;
+  padding: .5em;
+  color: white;
+}
+ .description2 {
+   text-align: center;
+   font-size: 30px;
+   padding: .1em;
+   color: white;
+ }
+
+ .middleor {
+   text-align: center;
+   font-size: 30px;
+   padding: .2em;
+   color: white;
+ }
 .navbar-default {
   background-color: #FFFFFF;
 }
@@ -104,6 +144,14 @@ body {
   height: 4rem;
 }
 
+.form-control1 {
+  text-align: center;
+  font-size: 15px;
+  padding: .1em;
+  color: white;
+  border-radius: 2px;
+  height: 4rem;
+}
 .sidebar-list {
   padding-left: 0;
   list-style: none;
