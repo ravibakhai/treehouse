@@ -20,7 +20,7 @@
           <div class="col-md-4 select">
             <div class="form-group">
               <label>Semester (if applicable)</label>
-            <%= f.select :quarter, [["Fall", "Fall"], ["Spring", "Spring"]], id: "semester", prompt: "Select...", class: "form-control" %>
+            <%= f.select :quarter, [["Fall", "Fall"], ["Spring", "Spring"], ["Summer", "Summer"]], id: "semester", prompt: "Select...", class: "form-control" %>
             </div>
           </div>
 
@@ -41,7 +41,7 @@
             </div>
           </div> -->
 
-        <div class="col-md-4 select">
+        <div class="col-md-3 select">
           <div class="form-group">
             <label>Accomodates*</label>
           <%= f.select :accommodate, [["1", "1"], ["2", "2"], ["3", "3"],
@@ -52,7 +52,7 @@
       </div>
 
         <div class = "row">
-          <div class="col-md-4 select">
+          <div class="col-md-3 select">
             <div class="form-group">
               <label>Bedrooms*</label>
             <%= f.select :bedroom, [["1", "1"], ["2", "2"], ["3", "3"],
@@ -61,7 +61,7 @@
             </div>
           </div>
 
-          <div class="col-md-4 select">
+          <div class="col-md-3 select">
             <div class="form-group">
               <label>Bathrooms*</label>
             <%= f.select :bathroom, [["1", "1"], ["1.5", "1.5"], ["2", "2"],
@@ -70,14 +70,14 @@
             </div>
           </div>
 
-          <div class="col-md-4 select">
+          <div class="col-md-3 select">
             <div class="form-group">
               <label>Laundry</label>
             <%= f.select :washer, [["In-Unit Laundry", "In-Unit Laundry"], ["Shared", "Shared"], ["None", "None"]], id: "washer", prompt: "Select...", class: "form-control" %>
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="form-group">
               <label>Square Feet</label>
               <div class="input-group">
