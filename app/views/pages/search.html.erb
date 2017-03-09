@@ -93,16 +93,16 @@
 
 				<hr>
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-3">
 						<%= check_box_tag "q[property_type_eq_any][]", "Apartment" %> Apartment
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-3">
 						<%= check_box_tag "q[property_type_eq_any][]", "House" %> House
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-3">
 						<%= check_box_tag "q[property_type_eq_any][]", "Frat House" %> Frat House
 					</div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <%= check_box_tag "q[property_type_eq_any][]", "Town House" %> Town House
           </div>
 				</div>
@@ -117,12 +117,12 @@
 						</div>
 					</div>
 
-          <div class="col-md-4">
+          <!-- <div class="col-md-4">
             <div class="form-group">
               <label>Rooms</label>
               <%= f.select :accommodate_gteq, [["1",1], ["2",2], ["3",3], ["4+",4]], prompt: "Select...", class: "form-control" %>
             </div>
-          </div>
+          </div> -->
 
 					<div class="col-md-4">
 						<div class="form-group">
