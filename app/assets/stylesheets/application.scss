@@ -343,8 +343,11 @@ font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", He
 .css-slideshow{
   position: relative;
   max-width: 100%;
-  height: 750px;
+  height: 650px;
   margin: 5em auto .5em auto;
+  background-size:cover;
+  background-position: center;
+
 }
 .css-slideshow figure{
   margin: 0;
