@@ -344,20 +344,26 @@ font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", He
   position: relative;
   max-width: 100%;
   height: 650px;
-  margin: 5em auto .5em auto;
+  // margin: -3em auto -.5em auto;
   background-size:cover;
   background-position: center;
 
 }
 .css-slideshow figure{
   margin: 0;
-  max-width: 495px;
-  height: 370px;
   background: #000;
   position: absolute;
+  background-size:cover;
+  background-position: center;
+  height: 650px;
+  width: 100%;
 }
 .css-slideshow img{
   box-shadow: 0 0 2px #666;
+  background-size:cover;
+  background-position: center;
+  height: 650px;
+  width: 100%;
 }
 .css-slideshow figcaption{
   position: absolute;
@@ -387,43 +393,50 @@ font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", He
   opacity:0;
 }
 figure:nth-child(1) {
-  animation: xfade 48s 42s infinite;
+  animation: xfade 24s 18s infinite;
 }
 figure:nth-child(2) {
-  animation: xfade 48s 36s infinite;
+  animation: xfade 24s 12s infinite;
 }
 figure:nth-child(3) {
-  animation: xfade 48s 30s infinite;
+  animation: xfade 24s 6s infinite;
 }
 figure:nth-child(4) {
-  animation: xfade 48s 24s infinite;
+  animation: xfade 24s 0s infinite;
 }
-figure:nth-child(5) {
-  animation: xfade 48s 18s infinite;
-}
-figure:nth-child(6) {
-  animation: xfade 48s 12s infinite;
-}
-figure:nth-child(7) {
-  animation: xfade 48s 6s infinite;
-}
-figure:nth-child(8) {
-  animation: xfade 48s 0s infinite;
-}
+// figure:nth-child(5) {
+//   animation: xfade 48s 18s infinite;
+// }
+// figure:nth-child(6) {
+//   animation: xfade 48s 12s infinite;
+// }
+// figure:nth-child(7) {
+//   animation: xfade 48s 6s infinite;
+// }
+// figure:nth-child(8) {
+//   animation: xfade 48s 0s infinite;
+// }
 
 @keyframes xfade{
   0%{
     opacity: 1;
   }
-  10.5% {
+  20% {
     opacity: 1;
   }
-  12.5%{
+
+  25%{
     opacity: 0;
   }
-  98% {
+
+  90% {
     opacity: 0;
   }
+
+  95% {
+    opacity: .8;
+  }
+
   100% {
     opacity: 1;
   }
