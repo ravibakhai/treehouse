@@ -29,31 +29,28 @@
 						<%= @property.address %>
 
 						<div class="row text-center row-space-1">
-							<div class="col-sm-3">
+							<div class="col-sm-4">
 								<i class="fa fa-home fa-2x"></i>
 							</div>
-							<div class="col-sm-3">
+							<!-- <div class="col-sm-3">
 								<i class="fa fa-users fa-2x"></i>
-							</div>
-							<div class="col-sm-3">
+							</div> -->
+							<div class="col-sm-4">
 								<i class="fa fa-bed fa-2x"></i>
 							</div>
-							<div class="col-sm-3">
+							<div class="col-sm-4">
 								<i class="fa fa-ship fa-2x"></i>
 							</div>
 						</div>
 
 						<div class="row text-center">
-							<div class="col-sm-3">
+							<div class="col-sm-4">
 								<%= @property.property_type %>
 							</div>
-							<div class="col-sm-3">
-								<%= pluralize(@property.accommodate, 'Guest') %>
+							<div class="col-sm-4">
+								<%= pluralize(@property.accommodate, 'Bedroom') %>
 							</div>
-							<div class="col-sm-3">
-								<%= @property.bedroom %> <%= @property.bedroom > 1? "Bedrooms" : "Bedroom" %>
-							</div>
-							<div class="col-sm-3">
+							<div class="col-sm-4">
 								<%= @property.bathroom %> <%= @property.bathroom > 1? "Bathrooms" : "Bathroom" %>
 							</div>
 						</div>
