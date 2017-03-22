@@ -7,7 +7,7 @@
 				<% if @property.photos.count > 0 %>
 				<%= image_tag @photos[0].image.url(), class: "backgroundimages" if @photos.length > 0 %>
 				<% else %>
-				<%= image_tag "treehouselogo.png", class: "backgroundimages" %>
+				<%= image_tag "treehouselogo.png", class: "img-responsive" %>
 				<% end %>
 			</div>
 		</div>
