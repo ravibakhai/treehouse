@@ -5,9 +5,9 @@
 		<div class="row">
 			<div class="col-md-12">
 				<% if @property.photos.count > 0 %>
-				<%= image_tag @photos[0].image.url(), class: "img-responsive" if @photos.length > 0 %>
+				<%= image_tag @photos[0].image.url(), class: "backgroundimages" if @photos.length > 0 %>
 				<% else %>
-				<%= image_tag "treehouselogo.png", class: "img-responsive" %>
+				<%= image_tag "treehouselogo.png", class: "backgroundimages" %>
 				<% end %>
 			</div>
 		</div>
