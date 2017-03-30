@@ -68,7 +68,7 @@ body {
   font-weight: 400;
 }
 
-.btn-primary.btn {
+.btn-primary1.btn {
   border: 1px solid rgba(23, 162, 48, 0.74);
   border-radius: 25px;
   background-color: rgba(23, 162, 48, 0.44);
@@ -80,12 +80,29 @@ body {
   border-style: solid;
 }
 
-.btn-primary.btn:hover, .btn-primary.btn:focus {
+.btn-primary1.btn:hover, .btn-primary.btn:focus {
   border-color: #84daa3;
   border-bottom-color: #6bb385;
   background-color: white;
   outline:none;
   color: black;
+}
+
+.btn-primary.btn {
+  border: 1px solid rgba(23, 162, 48, 0.74);
+  border-radius: 2px;
+  font-weight: bold;
+  background-color: rgba(23, 162, 48, 0.74);
+  color: #fff;
+  padding: 10px 25px 10px 25px;
+  font-size: 16px;
+}
+
+.btn-primary.btn:hover, .btn-primary.btn:focus {
+  border-color: #84daa3;
+  border-bottom-color: #6bb385;
+  background-color: #84daa3;
+  outline:none;
 }
 
 .btn-primary.btn:active {
