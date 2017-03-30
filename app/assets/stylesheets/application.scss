@@ -6,7 +6,7 @@ body {
   color: #565a5c;
   // background-color: #F8F8F8;
   background-color: white;
-  font-family: "futura-pt";
+  font-family: 'PT Serif', serif;
 }
 
 .searchome {
@@ -70,18 +70,22 @@ body {
 
 .btn-primary.btn {
   border: 1px solid rgba(23, 162, 48, 0.74);
-  border-radius: 2px;
-  font-weight: bold;
-  background-color: rgba(23, 162, 48, 0.74);
+  border-radius: 25px;
+  background-color: rgba(23, 162, 48, 0.44);
   color: #fff;
-  padding: 10px 25px 10px 25px;
+  margin-top: 10px;
+  padding: 13px 25px 13px 25px;
+  font-size: 16px;
+  border-color: white;
+  border-style: solid;
 }
 
 .btn-primary.btn:hover, .btn-primary.btn:focus {
   border-color: #84daa3;
   border-bottom-color: #6bb385;
-  background-color: #84daa3;
+  background-color: white;
   outline:none;
+  color: black;
 }
 
 .btn-primary.btn:active {
