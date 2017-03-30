@@ -132,11 +132,11 @@ isNaN(b)?!0:a>b};this._resetAlt=function(a,b){var d=a.getAttribute("alt"),c=d&&0
           <p>Find the perfect subletter or place.</p>
               <%= form_tag search_path, method: :get do %>
               <%= text_field_tag :search, params[:search], placeholder: "University, city, or address", class: "form-control" %>
-              <p><%= submit_tag "SEARCH FOR LISTINGS", class: "btn btn-primary1"%></p>
+              <p><%= submit_tag "SEARCH LISTINGS", class: "btn btn-primary1"%></p>
               <% end %>
             <br>
         <p>Or</p>
-        <p class=description2><%= link_to "Post your place", new_property_path, class: "btn btn-primary"%></p>
+        <div class=description2><%= link_to "POST YOUR PLACE", new_property_path, class: "btn btn-primary1"%></div>
         </div>
       </div>
     <div class="scroll-arrow"><span>SCROLL DOWN</span></div>

@@ -72,15 +72,16 @@ nav.navbar.navbar-default.navbar-static-top {
 }
 
 .btn-primary1.btn {
-  border: 1px solid rgba(23, 162, 48, 0.74);
+  border: .5px solid rgba(23, 162, 48, 0.74);
   border-radius: 25px;
-  background-color: rgba(23, 162, 48, 0.44);
+  background-color: rgba(23, 162, 48, 0.34);
   color: #fff;
   margin-top: 10px;
   padding: 13px 25px 13px 25px;
   font-size: 16px;
   border-color: white;
   border-style: solid;
+  text-decoration: none;
 }
 
 .btn-primary1.btn:hover, .btn-primary.btn:focus {
