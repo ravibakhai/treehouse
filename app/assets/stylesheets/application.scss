@@ -359,6 +359,19 @@ input[type="checkbox"]:checked:before {
   width: 350px;
 }
 
+.discovery-card1 {
+  background-size:cover;
+  background-position: center;
+  overflow: hidden;
+  height: 690px;
+  width: 450px;
+  position: absolute;
+}
+
+.abouttext {
+  margin-left: 500px;
+  width: 300px;
+}
 .va-container {
   display: table;
   width: 100%;
