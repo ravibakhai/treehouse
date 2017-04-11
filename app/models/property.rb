@@ -12,7 +12,7 @@ class Property < ActiveRecord::Base
   validates :accommodate, presence: true
   # validates :bedroom, presence: true
   validates :bathroom, presence: true
-  validates :listing_name, presence: true, length: {maximum: 50}
+  validates :listing_name, presence: true, length: {maximum: 1000}
   validates :summary, presence: true, length: {maximum: 2000}
   validates :address, presence: true
 
